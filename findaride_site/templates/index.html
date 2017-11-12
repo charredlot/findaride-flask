@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <title>Find a Ride</title>
+        {% include 'head.html' %}
+        <link href="/static/index.css" rel="stylesheet">
     </head>
+
     <body>
+        <div role="main">
+            <h1>Find a Ride</h1>
+            <div>
+                <ul role="menu" class="mainmenu">
+                    <li role="menuitem" class="mainmenuitem">
+                        <button type="button" class="mainmenubutton">
+                            Find a ride!
+                        </button>
+                    </li>
+                    <li role="menuitem" class="mainmenuitem">
+                        <button type="button" class="mainmenubutton">
+                            Explore map
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

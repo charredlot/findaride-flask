@@ -1,0 +1,7 @@
+.mainmenu {
+    list-style-type: none;
+}
+
+.mainmenubutton {
+    min-width: 10em;
+}
