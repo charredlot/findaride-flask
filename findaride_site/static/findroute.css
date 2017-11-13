@@ -1,0 +1,7 @@
+#routeendmenuitem, #routetimemenuitem, #routeaccessmenuitem {
+    visibility: hidden;
+}
+
+#routeaccess {
+    color: #003366;
+}

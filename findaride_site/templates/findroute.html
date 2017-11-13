@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+        <link href="/static/findroute.css" rel="stylesheet">
+        <script type="text/javascript">
+        function nextItem(id) {
+            $("#" + id).css('visibility', 'visible');
+            document.getElementById(id).scrollIntoView(true);
+        }
+        </script>
+    </head>
+
+    <body>
+        <div role="main">
+            <h1>Find a Ride</h1>
+            <div>
+                <ol role="menu" class="routemenu">
+                    <li role="menuitem" id="routestartmenuitem">
+                        <label for="routestart">
+                            What's your starting location?
+                        </label>
+                        <br>
+                        <input type="text" id="routestart"></input>
+                        <br>
+                        <button type="button" class="routemenubutton"
+                                onclick="nextItem('routeendmenuitem');">
+                            Next
+                        </button>
+                    </li>
+                    <li role="menuitem" id="routeendmenuitem">
+                        <label for="routeend">
+                            Where are you going?
+                        </label>
+                        <br>
+                        <input type="text" id="routeend"></input>
+                        <br>
+                        <button type="button" class="routemenubutton"
+                                onclick="nextItem('routetimemenuitem');">
+                            Next
+                        </button>
+                    </li>
+                    <li role="menuitem" id="routetimemenuitem">
+                        <label for="routetime">
+                            When do you have to arrive?
+                        </label>
+                        <br>
+                        <input type="text" id="routetime"></input>
+                        <br>
+                        <button type="button" class="routemenubutton"
+                                onclick="nextItem('routeaccessmenuitem');">
+                            Next
+                        </button>
+                    </li>
+                    <li role="menuitem" id="routeaccessmenuitem">
+                        <label for="routeaccess">
+                            Do you have any accessibility requirements?
+                        </label>
+                        <br>
+                        <select name="routeaccess" id="routeaccess">
+                            <option value="none">None</option>
+                            <option value="power_chair">Power Chair</option>
+                            <option value="wheelchair">Wheelchair</option>
+                            <option value="foldable_wheelchair">
+                                Foldable Wheelchair
+                            </option>
+                            <option value="scooter">Scooter</option>
+                            <option value="walker">Walker</option>
+                            <option value="car_seat">Car Seat</option>
+                        </select>
+                        <br>
+                        <button type="button" class="routemenubutton">
+                            Find route!
+                        </button>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>

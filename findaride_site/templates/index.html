@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         {% include 'head.html' %}
+        <!-- TODO: better to extends a template to inline the css? -->
         <link href="/static/index.css" rel="stylesheet">
     </head>
 
@@ -11,7 +12,8 @@
             <div>
                 <ul role="menu" class="mainmenu">
                     <li role="menuitem" class="mainmenuitem">
-                        <button type="button" class="mainmenubutton">
+                        <button type="button" class="mainmenubutton"
+                                onclick="location.href='/findroute';">
                             Find a ride!
                         </button>
                     </li>
