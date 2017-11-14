@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+        <link href="/static/map.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <h1>beep boop beep</h1>
+        <div id="map"></div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}&libraries=drawing,places,geometry">
+        </script>
+        <script type="text/javascript" src="/static/InitMap.js">
+        </script>
+        <script type="text/javascript">
+        /* need this to happen after google apis loads */
+        initMap();
+        </script>
+    </body>
+</html>
