@@ -4,9 +4,15 @@
         {% include 'head.html' %}
         <link href="/static/findroute.css" rel="stylesheet">
         <script type="text/javascript">
-        function nextItem(id) {
-            $("#" + id).css('visibility', 'visible');
-            document.getElementById(id).scrollIntoView(true);
+        function nextItem(button, curr_id, next_id) {
+            // hide button
+            $(button).hide();
+
+            // gray out list item
+            $('#' + curr_id).css('background-color', '#e0e0d1');
+
+            // make the next item visible
+            $("#" + next_id).css('visibility', 'visible');
         }
         </script>
     </head>
@@ -15,7 +21,7 @@
         <div role="main">
             <h1>Find a Ride</h1>
             <div>
-                <ol role="menu" class="routemenu">
+                <ul role="menu" class="routemenu">
                     <li role="menuitem" id="routestartmenuitem">
                         <label for="routestart">
                             What's your starting location?
@@ -24,7 +30,9 @@
                         <input type="text" id="routestart"></input>
                         <br>
                         <button type="button" class="routemenubutton"
-                                onclick="nextItem('routeendmenuitem');">
+                                onclick="nextItem(this,
+                                                  'routestartmenuitem',
+                                                  'routeendmenuitem');">
                             Next
                         </button>
                     </li>
@@ -36,7 +44,9 @@
                         <input type="text" id="routeend"></input>
                         <br>
                         <button type="button" class="routemenubutton"
-                                onclick="nextItem('routetimemenuitem');">
+                                onclick="nextItem(this,
+                                                  'routeendmenuitem',
+                                                  'routetimemenuitem');">
                             Next
                         </button>
                     </li>
@@ -48,7 +58,9 @@
                         <input type="text" id="routetime"></input>
                         <br>
                         <button type="button" class="routemenubutton"
-                                onclick="nextItem('routeaccessmenuitem');">
+                                onclick="nextItem(this,
+                                                  'routetimemenuitem',
+                                                  'routeaccessmenuitem');">
                             Next
                         </button>
                     </li>
